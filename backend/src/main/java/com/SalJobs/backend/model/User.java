@@ -7,6 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*
+ * Class for the User. Add the constructor, getters and setter. The @ stuff
+ * corresponds to SQL notation, i.e. @ID == primary key, @Column == attribute. 
+ * For other stuff like foreign keys, search up JPA annotations, jpa foreign key etc.
+ */
+
 @Entity
 @Table(name = "Users")
 public class User {
