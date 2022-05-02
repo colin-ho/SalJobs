@@ -19,7 +19,6 @@ public interface ListingRepository extends JpaRepository<Listing, Long> {
 
 	List <Listing> findByStatus(String status);
 	List <Listing> findByTitle(String title);
-	List <Listing> findByID(long id);
 	List <Listing> findByCompany(String company);
 	
 	// add custom query methods below

@@ -20,25 +20,23 @@ import java.util.*;
 @RequestMapping("/listings")
 public class ListingController {
 
-    @Autowired
-    private ListingRepository listingRepository;
+	@Autowired
+	private ListingRepository listingRepository;
 
-    @GetMapping("/getAll")
-    public List<Listing> getAllListings(){
-    	List <Listing> result = listingRepository.findByStatus("open");
-        return result;
-    }
+	@GetMapping("/getAll")
+	public List<Listing> getAllListings() {
+		List<Listing> result = listingRepository.findByStatus("open");
+		return result;
+	}
 
-    @PostMapping("/create")
-    public Listing createListing(@RequestBody Listing listing) {
-        return listingRepository.save(listing);
-    }
-    
-    @DeleteMapping(path = "{id}")
-    public void deleteListing(@PathVariable("id") Long id) {
-    	List<Listing> toDelete = listingRepository.findByID(id);
-        listingRepository.delete(toDelete.get(0));
-    }
-    
+	@PostMapping("/create")
+	public Listing createListing(@RequestBody Listing listing) {
+		return listingRepository.save(listing);
+	}
+
+	@DeleteMapping(path = "{id}")
+	public void deleteListing(@PathVariable("id") Long id) {
+		listingRepository.deleteById(id);
+	}
+
 }
-
