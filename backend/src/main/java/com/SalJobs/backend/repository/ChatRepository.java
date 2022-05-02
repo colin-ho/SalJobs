@@ -1,9 +1,12 @@
 package com.SalJobs.backend.repository;
 
-public class ChatRepository {
+import java.util.List;
 
-	public ChatRepository() {
-		// TODO Auto-generated constructor stub
-	}
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.SalJobs.backend.model.Chat;
+
+public interface ChatRepository extends JpaRepository<Chat, Long> {
+	List <Chat> findByRecruiter(String recruiter);
+	List <Chat> findByApplicant(String applicant);
 }
