@@ -15,6 +15,9 @@ public class Listing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
+    @Column(name = "company")
+    private String company;
 
     @Column(name = "title")
     private String title;
@@ -22,9 +25,60 @@ public class Listing {
     @Column(name = "description")
     private String description;
     
-    @Column(name = "status")
-    private String status;
+    @Column(name = "location")
+    private String location;
 
-    /* add more shit*/
-    
+
+public Listing(long id, String company, String title, String description, String location) {
+	this.id = id;
+	this.company = company;
+	this.title = title;
+	this.description = description;
+	this.location = location;
 }
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+}
+
+   
+    
+    
+   

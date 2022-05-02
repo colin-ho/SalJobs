@@ -16,7 +16,11 @@ public interface ListingRepository extends JpaRepository<Listing, Long> {
      * it finds listings from the MYSQL database based on Status. Nothing else
      * needed
      */
+
 	List <Listing> findByStatus(String status);
+	List <Listing> findByTitle(String title);
+	List <Listing> findByID(long id);
+	List <Listing> findByCompany(String company);
 	
 	// add custom query methods below
 }

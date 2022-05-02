@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.SalJobs.backend.model.Listing;
 import com.SalJobs.backend.repository.ListingRepository;
 
-import java.util.List;
+import java.util.*;
 
 /*
  * API methods go here. @PostMapping means it's a post method, @GetMapping means
@@ -33,5 +33,12 @@ public class ListingController {
     public Listing createListing(@RequestBody Listing listing) {
         return listingRepository.save(listing);
     }
+    
+    @DeleteMapping(path = "{id}")
+    public void deleteListing(@PathVariable("id") Long id) {
+    	List<Listing> toDelete = listingRepository.findByID(id);
+        listingRepository.delete(toDelete.get(0));
+    }
+    
 }
 
