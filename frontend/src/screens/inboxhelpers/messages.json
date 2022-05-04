@@ -1,0 +1,68 @@
+[
+    {
+      "id": 1,
+      "from": "William Chen",
+      "fromAddress": "test@usc.edu",
+      "subject": "SalEats Interview",
+      "dtSent": "Today, 9:18AM",
+      "read": false,
+      "body": "Hey,<br><br>The SalEats team reviewed your resume, and we would love to schedule an interview with you this week. Can you call me if you still do?<br><br>Thanks,<br><b>William Chen</b>"
+    },
+    {
+      "id": 2,
+      "from": "Victor Adamchik",
+      "fromAddress": "test@usc.edu",
+      "subject": "Rescheduled Interview",
+      "dtSent": "Today, 11:00AM",
+      "read": false,
+      "body": "Hello,<br>Your interview has requested to reschedule the interview. When are your next best available dates?<br>Victor Adamchik",
+      "attachment": false
+    },
+    {
+      "id": 3,
+      "from": "Yi Jiang",
+      "fromAddress": "test@usc.edu",
+      "subject": "Your Application Has Been Submitted",
+      "dtSent": "Yesterday, 4:48PM",
+      "read": true,
+      "body": "Thank you for submitting an application. We will get back to you within two to four weeks.",
+      "attachment": true
+    },
+    {
+      "id": 4,
+      "from": "Zhihan Wang",
+      "fromAddress": "test@usc.edu",
+      "subject": "RE: Offer Letter",
+      "dtSent": "Yesterday, 4:40PM",
+      "read": false,
+      "body": "Congrats! Here's your offer letter!",
+      "priority": 1
+    },
+    {
+      "id": 4,
+      "from": "Mengfei Zhang",
+      "fromAddress": "test@usc.edu",
+      "subject": "[Please Read] Important Information",
+      "dtSent": "3 Days Ago",
+      "read": true,
+      "body": "Congratulations on your internship! We need some important information from you in order to continue with your internship!"
+    },
+    {
+      "id": 6,
+      "from": "Karan Ramrakhani",
+      "fromAddress": "test@usc.edu",
+      "subject": "New Developer Position Available",
+      "dtSent": "3 Days Ago",
+      "read": true,
+      "body": "Hello,<br>There's a new position available at our company if you would like to apply."
+    },
+    {
+      "id": 7,
+      "from": "Meiwen Fu",
+      "fromAddress": "test@usc.edu",
+      "subject": "Thank You For Your Application!",
+      "dtSent": "3 Days Ago",
+      "read": true,
+      "body": "We have received your application and will respond in two weeks!"
+    }
+  ]

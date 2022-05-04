@@ -4,7 +4,7 @@ import ModalCompose from "./inboxhelpers/ModalCompose";
 import ModalMessage from "./inboxhelpers/ModalMessage";
 import messages from "./inboxhelpers/messages.json";
 
-export class Inbox extends Component {
+export class InboxCompose extends Component {
   constructor(props) {
     super(props);
     this.markRead = this.markRead.bind(this);
@@ -111,4 +111,4 @@ export class Inbox extends Component {
   }
 }
 
-export default Inbox;
+export default InboxCompose;
