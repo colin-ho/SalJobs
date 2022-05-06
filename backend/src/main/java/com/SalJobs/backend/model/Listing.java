@@ -12,30 +12,59 @@ import javax.persistence.*;
 @Table(name = "Listings")
 public class Listing {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    
-    @Column(name = "company")
-    private String company;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
-    @Column(name = "title")
-    private String title;
+	@Column(name = "company")
+	private String company;
 
-    @Column(name = "description")
-    private String description;
-    
-    @Column(name = "location")
-    private String location;
+	@Column(name = "title")
+	private String title;
 
+	@Column(name = "description")
+	private String description;
 
-public Listing(long id, String company, String title, String description, String location) {
-	this.id = id;
-	this.company = company;
-	this.title = title;
-	this.description = description;
-	this.location = location;
-}
+	@Column(name = "location")
+	private String location;
+	
+	@Column(name = "recruiterId")
+	private String recruiterId;
+	
+	@Column(name = "recruiterName")
+	private String recruiterName;
+	
+	public Listing() {
+
+	}
+
+	public Listing(long id, String company, String title, String description, String location,String recruiterId,String recruiterName) {
+		this.id = id;
+		this.company = company;
+		this.title = title;
+		this.description = description;
+		this.location = location;
+		this.recruiterId = recruiterId;
+		this.recruiterName = recruiterName;
+	}
+	
+	
+
+	public String getRecruiterId() {
+		return recruiterId;
+	}
+
+	public void setRecruiterId(String recruiterId) {
+		this.recruiterId = recruiterId;
+	}
+
+	public String getRecruiterName() {
+		return recruiterName;
+	}
+
+	public void setRecruiterName(String recruiterName) {
+		this.recruiterName = recruiterName;
+	}
 
 	public void setId(long id) {
 		this.id = id;
@@ -76,9 +105,5 @@ public Listing(long id, String company, String title, String description, String
 	public String getLocation() {
 		return location;
 	}
-}
 
-   
-    
-    
-   
+}

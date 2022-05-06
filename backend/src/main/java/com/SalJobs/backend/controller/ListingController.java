@@ -25,7 +25,7 @@ public class ListingController {
 
 	@GetMapping("/getAll")
 	public List<Listing> getAllListings() {
-		List<Listing> result = listingRepository.findByStatus("open");
+		List<Listing> result = listingRepository.findAll();
 		return result;
 	}
 
@@ -34,7 +34,7 @@ public class ListingController {
 		return listingRepository.save(listing);
 	}
 
-	@DeleteMapping(path = "{id}")
+	@DeleteMapping("/delete/{id}")
 	public void deleteListing(@PathVariable("id") Long id) {
 		listingRepository.deleteById(id);
 	}

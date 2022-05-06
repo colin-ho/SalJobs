@@ -6,29 +6,57 @@ import javax.persistence.*;
 @Table(name = "Chats")
 public class Chat {
 	
-	 public Chat(long id, String applicant, String recruiter, String status) {
-		super();
-		this.id = id;
-		this.applicant = applicant;
-		this.recruiter = recruiter;
-		this.status = status;
+	public Chat() {
+		
 	}
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long id;
+	public Chat(long id, long applicantId,long recruiterId, String applicantName, String recruiterName,String initialMessage) {
+		super();
+		this.id = id;
+		this.recruiterId = recruiterId;
+		this.applicantId = applicantId;
+		this.applicantName = applicantName;
+		this.recruiterName = recruiterName;
+		this.initialMessage = initialMessage;
+	}
 
-    @Column(name = "applicant")
-    private String applicant;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private long id;
 
-	@Column(name = "recruiter")
-    private String recruiter;
-    
-    @Column(name = "status")
-    private String status;
+	@Column(name = "applicantName")
+	private String applicantName;
 
-    public long getId() {
+	@Column(name = "recruiterName")
+	private String recruiterName;
+	
+	@Column(name = "applicantId")
+	private Long applicantId;
+
+	@Column(name = "recruiterId")
+	private Long recruiterId;
+	
+	@Column(name = "initialMessage")
+	private String initialMessage;
+
+	public Long getRecruiterId() {
+		return recruiterId;
+	}
+
+	public void setId(Long recruiterId) {
+		this.recruiterId = recruiterId;
+	}
+	
+	public long getApplicantId() {
+		return applicantId;
+	}
+
+	public void setApplicantId(long applicantId) {
+		this.applicantId = applicantId;
+	}
+
+	public long getId() {
 		return id;
 	}
 
@@ -36,30 +64,28 @@ public class Chat {
 		this.id = id;
 	}
 
-	public String getApplicant() {
-		return applicant;
+	public String getApplicantName() {
+		return applicantName;
 	}
 
-	public void setApplicant(String applicant) {
-		this.applicant = applicant;
+	public void setApplicantName(String applicantName) {
+		this.applicantName = applicantName;
 	}
-
-	public String getRecruiter() {
-		return recruiter;
-	}
-
-	public void setRecruiter(String recruiter) {
-		this.recruiter = recruiter;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	
-    
+	public String getInitialMessage() {
+		return initialMessage;
+	}
+
+	public void setInitialMessage(String message) {
+		this.initialMessage = message;
+	}
+
+	public String getRecruiterName() {
+		return recruiterName;
+	}
+
+	public void setRecruiter(String recruiterName) {
+		this.recruiterName = recruiterName;
+	}
+
 }

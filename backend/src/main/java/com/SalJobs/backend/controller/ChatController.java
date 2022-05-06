@@ -9,7 +9,10 @@ import com.SalJobs.backend.model.Message;
 import com.SalJobs.backend.repository.ChatRepository;
 import com.SalJobs.backend.repository.ListingRepository;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /*
  * API methods go here. @PostMapping means it's a post method, @GetMapping means
@@ -24,16 +27,19 @@ public class ChatController {
     @Autowired
     private ChatRepository chatRepository;
 
-    @GetMapping("/getChats")
-    public List<Chat> getAllChats(@RequestBody String userId){
-    	List<Chat> result = chatRepository.findByRecruiter(userId);
-        return result;
+    @CrossOrigin
+    @GetMapping("/getChats/{userId}")
+    public List<Chat> getAllChats(@PathVariable String userId){
+    	List<Chat> result1 = chatRepository.findByRecruiterId(Long.parseLong(userId));
+    	List<Chat> result2 = chatRepository.findByApplicantId(Long.parseLong(userId));
+    	result1.removeAll(result2);
+    	result1.addAll(result2);
+        return result1;
     }
 
     @PostMapping("/create")
-    public String createListing(@RequestBody Chat chat) {
-        chatRepository.save(chat);
-        return "ok";
+    public Chat createListing(@RequestBody Chat chat) {
+        return chatRepository.save(chat);
     }
 }
 

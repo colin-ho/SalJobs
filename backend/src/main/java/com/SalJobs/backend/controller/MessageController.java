@@ -24,12 +24,12 @@ public class MessageController {
     private MessageRepository messageRepository;
 
     @GetMapping("/getMessages")
-    public List<Message> getAllChats(@RequestBody String chatId){
+    public List<Message> getAllMessages(@RequestBody String chatId){
     	List<Message> result = messageRepository.findByChatId(chatId);
         return result;
     }
     
-    @MessageMapping("/chat/{chatId}/send")
+    @MessageMapping("/{chatId}/send")
     public Message sendMessage(@DestinationVariable String chatId, Message message) throws Exception {
     	messageRepository.save(message);
     	return message;

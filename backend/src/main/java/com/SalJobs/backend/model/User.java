@@ -30,15 +30,15 @@ public class User {
 	@Column(name = "password")
     private String password;
     
-    @Column(name = "authToken")
-    private String authToken;
+    public User() {
+
+    }
     
-    public User(long id, String email, String name, String password, String authToken) {
+    public User(long id, String email, String name, String password) {
     	this.id = id;
     	this.email = email;
     	this.name = name;
     	this.password = password;
-    	this.authToken = authToken;
     }
     
     public long getId() {
@@ -71,14 +71,6 @@ public class User {
     
     public void setPassword(String password) {
     	this.password = password;
-    }
-    
-    public String getAuthToken() {
-    	return authToken;
-    }
-   
-    public void setAuthToken(String authToken) {
-    	this.authToken = authToken;
     }
    
 }

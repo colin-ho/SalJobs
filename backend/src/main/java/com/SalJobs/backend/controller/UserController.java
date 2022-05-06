@@ -21,15 +21,22 @@ public class UserController {
 
     @PostMapping("/signIn")
     public String signIn(@RequestBody User user){
-    	userRepository.findAll();//u can make queries to the database like this
-    	return "";
+    	User target = userRepository.findByEmail(user.getEmail());
+    	if(target==null) {
+    		return "Email not found";
+    	}
+    	if(!target.getPassword().equals(user.getPassword())) {
+    		return "Incorrect Password";
+    	}
+        return Long.toString(target.getId())+"%"+target.getName();
     }
 
     // build create employee REST API
-    @PostMapping("/signUp")
-    public String signUp(@RequestBody User user){
-    	userRepository.save(user);//save new users like this
-        return "";
+    @PostMapping("/register")
+    public String register(@RequestBody User user){
+    	User newUser = new User(0,user.getEmail(),user.getName(),user.getPassword());
+    	userRepository.save(newUser);
+        return Long.toString(newUser.getId())+"%"+newUser.getName();
     }
     
 
