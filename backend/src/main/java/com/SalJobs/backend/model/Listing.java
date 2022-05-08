@@ -22,7 +22,7 @@ public class Listing {
 	@Column(name = "title")
 	private String title;
 
-	@Column(name = "description")
+	@Column(name = "description",length=2000)
 	private String description;
 
 	@Column(name = "location")
@@ -34,11 +34,15 @@ public class Listing {
 	@Column(name = "recruiterName")
 	private String recruiterName;
 	
+	@Column(name = "applicantCount")
+	private long applicantCount;
+	
 	public Listing() {
 
 	}
 
-	public Listing(long id, String company, String title, String description, String location,String recruiterId,String recruiterName) {
+	public Listing(long id, String company, String title, String description, String location,String recruiterId,String recruiterName
+			,long applicantCount) {
 		this.id = id;
 		this.company = company;
 		this.title = title;
@@ -46,6 +50,7 @@ public class Listing {
 		this.location = location;
 		this.recruiterId = recruiterId;
 		this.recruiterName = recruiterName;
+		this.applicantCount = applicantCount;
 	}
 	
 	
@@ -104,6 +109,14 @@ public class Listing {
 
 	public String getLocation() {
 		return location;
+	}
+
+	public long getApplicantCount() {
+		return applicantCount;
+	}
+
+	public void setApplicantCount(long applicantCount) {
+		this.applicantCount = applicantCount;
 	}
 
 }

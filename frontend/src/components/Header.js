@@ -11,8 +11,9 @@ export default function Header() {
             <Container>
                 <Navbar.Brand href="/"><img style={{width:80}} alt="SalJobs"
             src= "https://i.imgur.com/pvb4AP3.png/"/></Navbar.Brand>
+            {user && <p style={{color:"grey"}}>Hi {user.name}!</p>}
                 <Nav className="justify-content-end">
-                    <Nav.Link href="/inbox">Inbox</Nav.Link>
+                    {user && <Nav.Link href="/inbox">Inbox</Nav.Link>}
                     {user ? <Nav.Link href="/login" onClick={()=>setUser(null)}>Log out</Nav.Link>:<Nav.Link href="/login">Login</Nav.Link>}
                     
                 </Nav>
