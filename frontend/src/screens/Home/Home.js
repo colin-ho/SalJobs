@@ -84,6 +84,7 @@ export default function Home() {
 
     const deleteListing = async(listingId)=>{
         await axios.delete(`http://localhost:8080/listings/delete/${listingId}`)
+        window.location.reload(false);
     }
 
     return (
